@@ -1,0 +1,33 @@
+{
+  "name": "@munitoai/pi-provider",
+  "version": "0.1.0",
+  "description": "Munito AI in pi: open models for Europe, private by default",
+  "keywords": [
+    "pi-package",
+    "pi",
+    "munito",
+    "llm",
+    "provider",
+    "eu"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://docs.munito.ai/pi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/munitoai/pi-provider.git"
+  },
+  "files": [
+    "index.ts",
+    "models.json",
+    "README.md"
+  ],
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}
