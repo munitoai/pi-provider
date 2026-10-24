@@ -6,8 +6,10 @@ Munito AI serves open models for Europe, private by default, on an OpenAI-compat
 ## Install
 
 ```bash
-pi install git:github.com/munitoai/pi-provider
+pi install npm:@munitoai/pi-provider
 ```
+
+To install from this repository instead, run `pi install git:github.com/munitoai/pi-provider`.
 
 Create an API key at [console.munito.ai/keys](https://console.munito.ai/keys).
 In pi, run `/login`, pick **Munito AI**, and paste the key. Or set `MUNITO_API_KEY` in your environment.
