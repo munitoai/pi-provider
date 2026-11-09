@@ -30,9 +30,13 @@ Both use the same key.
 |---|---|---|
 | `zai-org/glm-5.3-flash` | 1,048,576 | Text, images |
 | `deepseek-ai/deepseek-v4-flash` | 1,048,576 | Text |
-| `deepseek-ai/deepseek-v4.1-flash-1017` (preview, `munito` only) | 1,048,576 | Text, images |
+| `deepseek-ai/deepseek-v4.1-flash-1017` (preview) | 1,048,576 | Text, images |
 | `qwen/qwen3.8-27b` | 262,144 | Text, images |
 | `aleph-alpha/kolibri-1` | 1,048,576 | Text |
+| `google/gemma-4-12b` | 32,768 | Text |
+
+Gemma 4 12B supports text input in pi. pi does not accept audio input.
+The catalog also records decision models and their prices. They do not appear in pi because they require the Decisions API.
 
 The prices are at [docs.munito.ai/models](https://docs.munito.ai/models). pi shows the cost of each session from them.
 

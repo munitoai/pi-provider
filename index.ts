@@ -1,5 +1,5 @@
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
-import data from "./models.json";
+import data from "./models.json" with { type: "json" };
 
 type Price = { input: number; cachedInput: number; output: number };
 
@@ -27,13 +27,14 @@ export default function munito(pi: ExtensionAPI) {
       api: "openai-completions",
       models: data.models.flatMap((model) => {
         const price = (model.price as Record<string, Price | undefined>)[provider];
-        if (!price) return [];
+        // Decision models have no output budget and use a separate API.
+        if (!price || model.maxOutput === 0) return [];
         return [
           {
             id: model.id,
             name: model.name,
-            reasoning: true,
-            input: model.input as ("text" | "image")[],
+            reasoning: model.efforts.some((effort) => effort !== "none"),
+            input: model.input.filter((input): input is "text" | "image" => input === "text" || input === "image"),
             contextWindow: model.context,
             maxTokens: model.maxOutput,
             cost: { input: price.input, output: price.output, cacheRead: price.cachedInput, cacheWrite: price.input },

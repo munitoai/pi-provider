@@ -12,6 +12,9 @@
   ],
   "license": "MIT",
   "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  },
   "homepage": "https://docs.munito.ai/pi",
   "repository": {
     "type": "git",
