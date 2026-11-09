@@ -1,6 +1,6 @@
 {
-  "checked": "2026-10-24",
-  "sources": ["https://docs.munito.ai/models", "https://docs.munito.ai/reasoning"],
+  "checked": "2026-11-09",
+  "sources": ["https://docs.munito.ai/models", "https://docs.munito.ai/reasoning", "https://docs.munito.ai/pricing"],
   "providers": {
     "munito": { "name": "Munito AI", "baseUrl": "https://api.munito.ai/inference/v1" },
     "munito-eu": { "name": "Munito AI (EU)", "baseUrl": "https://api.eu.munito.ai/inference/v1" }
@@ -38,7 +38,8 @@
       "input": ["text", "image"],
       "efforts": ["low", "high", "max"],
       "price": {
-        "munito": { "input": 0.27, "cachedInput": 0.0054, "output": 1.0 }
+        "munito": { "input": 0.27, "cachedInput": 0.0054, "output": 1.0 },
+        "munito-eu": { "input": 0.3, "cachedInput": 0.006, "output": 1.2 }
       }
     },
     {
@@ -63,6 +64,42 @@
       "price": {
         "munito": { "input": 0.13, "cachedInput": 0.078, "output": 0.51 },
         "munito-eu": { "input": 0.16, "cachedInput": 0.094, "output": 0.56 }
+      }
+    },
+    {
+      "id": "google/gemma-4-12b",
+      "name": "Gemma 4 12B",
+      "context": 32768,
+      "maxOutput": 29491,
+      "input": ["text", "audio"],
+      "efforts": ["none"],
+      "price": {
+        "munito": { "input": 0.1, "cachedInput": 0.1, "output": 0.3 },
+        "munito-eu": { "input": 0.11, "cachedInput": 0.11, "output": 0.33 }
+      }
+    },
+    {
+      "id": "blockbrain/cygnet",
+      "name": "Cygnet",
+      "context": 16384,
+      "maxOutput": 0,
+      "input": ["text"],
+      "efforts": ["none"],
+      "price": {
+        "munito": { "input": 0.05, "cachedInput": 0.05, "output": 0.15 },
+        "munito-eu": { "input": 0.15, "cachedInput": 0.15, "output": 0.17 }
+      }
+    },
+    {
+      "id": "perplexity-ai/pplx-decider-v1.2",
+      "name": "pplx-decider-v1.2",
+      "context": 262144,
+      "maxOutput": 0,
+      "input": ["text", "image"],
+      "efforts": ["none"],
+      "price": {
+        "munito": { "input": 0.018, "cachedInput": 0.018, "output": 0 },
+        "munito-eu": { "input": 0.02, "cachedInput": 0.02, "output": 0 }
       }
     }
   ]
