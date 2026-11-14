@@ -27,14 +27,16 @@ export default function munito(pi: ExtensionAPI) {
       api: "openai-completions",
       models: data.models.flatMap((model) => {
         const price = (model.price as Record<string, Price | undefined>)[provider];
-        // Decision models have no output budget and use a separate API.
-        if (!price || model.maxOutput === 0) return [];
+        // A model is on a provider when its price has the key of that provider.
+        if (!price) return [];
         return [
           {
             id: model.id,
             name: model.name,
+            // A model with no effort levels, such as Gemma 4 12B, does not reason unless a request turns it on.
             reasoning: model.efforts.some((effort) => effort !== "none"),
-            input: model.input.filter((input): input is "text" | "image" => input === "text" || input === "image"),
+            // The check in CI keeps the input types of models.json to text and image, the types that pi reads.
+            input: model.input as ("text" | "image")[],
             contextWindow: model.context,
             maxTokens: model.maxOutput,
             cost: { input: price.input, output: price.output, cacheRead: price.cachedInput, cacheWrite: price.input },

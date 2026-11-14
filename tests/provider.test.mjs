@@ -16,12 +16,15 @@ test("Gemma offers text input without reasoning on both endpoints", () => {
   }
 });
 
-test("chat providers exclude decision models", () => {
+test("each provider registers chat models with an output limit and the input types of pi", () => {
   for (const config of providers.values()) {
     assert.equal(config.api, "openai-completions");
     assert.ok(config.models.length > 0);
-    assert.ok(config.models.every((model) => model.maxTokens > 0));
-    assert.ok(config.models.every(({ id }) => !["blockbrain/cygnet", "perplexity-ai/pplx-decider-v1.2"].includes(id)));
+    for (const model of config.models) {
+      assert.ok(model.maxTokens > 0);
+      assert.ok(model.input.length > 0);
+      assert.ok(model.input.every((type) => type === "text" || type === "image"));
+    }
   }
 });
 

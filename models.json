@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-09",
+  "checked": "2026-11-14",
   "sources": ["https://docs.munito.ai/models", "https://docs.munito.ai/reasoning", "https://docs.munito.ai/pricing"],
   "providers": {
     "munito": { "name": "Munito AI", "baseUrl": "https://api.munito.ai/inference/v1" },
@@ -32,7 +32,7 @@
     },
     {
       "id": "deepseek-ai/deepseek-v4.1-flash-1017",
-      "name": "DeepSeek-V4.1-Flash-1017 (preview)",
+      "name": "DeepSeek-V4.1-Flash-1017",
       "context": 1048576,
       "maxOutput": 943718,
       "input": ["text", "image"],
@@ -71,35 +71,11 @@
       "name": "Gemma 4 12B",
       "context": 32768,
       "maxOutput": 29491,
-      "input": ["text", "audio"],
-      "efforts": ["none"],
+      "input": ["text"],
+      "efforts": [],
       "price": {
         "munito": { "input": 0.1, "cachedInput": 0.1, "output": 0.3 },
         "munito-eu": { "input": 0.11, "cachedInput": 0.11, "output": 0.33 }
-      }
-    },
-    {
-      "id": "blockbrain/cygnet",
-      "name": "Cygnet",
-      "context": 16384,
-      "maxOutput": 0,
-      "input": ["text"],
-      "efforts": ["none"],
-      "price": {
-        "munito": { "input": 0.05, "cachedInput": 0.05, "output": 0.15 },
-        "munito-eu": { "input": 0.15, "cachedInput": 0.15, "output": 0.17 }
-      }
-    },
-    {
-      "id": "perplexity-ai/pplx-decider-v1.2",
-      "name": "pplx-decider-v1.2",
-      "context": 262144,
-      "maxOutput": 0,
-      "input": ["text", "image"],
-      "efforts": ["none"],
-      "price": {
-        "munito": { "input": 0.018, "cachedInput": 0.018, "output": 0 },
-        "munito-eu": { "input": 0.02, "cachedInput": 0.02, "output": 0 }
       }
     }
   ]
