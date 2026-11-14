@@ -1,6 +1,6 @@
 {
   "name": "@munitoai/pi-provider",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Munito AI in pi: open models for Europe, private by default",
   "keywords": [
     "pi-package",
